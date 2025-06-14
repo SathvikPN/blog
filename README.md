@@ -1,2 +1,2 @@
 # blog
-a space for my writings
+a space for my writings - https://sathvikpn.github.io/blog
