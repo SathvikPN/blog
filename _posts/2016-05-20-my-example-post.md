@@ -21,6 +21,7 @@ end of line
     caption="Gokarna Beach"
     src="https://images.unsplash.com/photo-1732298540659-a4c5d5c12808?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     altsrc="https://unsplash.com/photos/-fjSDrSa9aA"
+    aspect_ratio="original"
 %}
 
 
@@ -28,6 +29,7 @@ end of line
     caption="Gokarna Beach"
     src="https://images.unsplash.com/photo-1732298215835-f8999c1a3797?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     altsrc="https://unsplash.com/photos/MpdAsfsgf5M"
+    aspect_ratio="original"
 %}
 
 is image loading

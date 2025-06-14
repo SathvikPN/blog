@@ -1,10 +1,64 @@
+{% comment %}
+This include file renders a responsive image figure with a caption.
+
+Parameters:
+  - src: (Required) The path or URL to the image file.
+  - alt: (Required) The alt text for the image, important for accessibility.
+  - title: (Optional) The title attribute for the image, shown as a tooltip on hover.
+  - caption: (Optional) The caption text displayed below the image.
+  - altsrc: (Optional) An alternative link for the caption.
+  - aspect_ratio: (Optional) Defines the aspect ratio behavior.
+    - 'horizontal': Sets a common horizontal aspect ratio (e.g., 16/9). Crops the image to fit.
+    - 'vertical': Sets a common vertical aspect ratio (e.g., 9/16). Crops the image to fit.
+    - 'original': Displays the image with its original aspect ratio, fitting within the max-width.
+                  No cropping occurs; the full image is shown.
+    - (Default): If not specified or invalid, defaults to a 2/1 horizontal aspect ratio. Crops the image.
+{% endcomment %}
+
+{% comment %} Set default aspect ratio and object fit properties {% endcomment %}
+{% assign figure_aspect_ratio_style = '' %}
+{% assign image_object_fit_style = 'object-fit: cover;' %}
+{% assign image_height_style = 'height: 100%;' %}
+{% assign image_overflow_style = 'overflow: hidden;' %}
+
+{% comment %} Apply aspect ratio based on the 'aspect_ratio' input {% endcomment %}
+{% if include.aspect_ratio == 'horizontal' %}
+  {% assign figure_aspect_ratio_style = 'aspect-ratio: 16/9;' %}
+  {% comment %} Defaults (cover, 100% height) are suitable for horizontal cropping {% endcomment %}
+{% elsif include.aspect_ratio == 'vertical' %}
+  {% assign figure_aspect_ratio_style = 'aspect-ratio: 9/16;' %}
+  {% comment %} Defaults (cover, 100% height) are suitable for vertical cropping {% endcomment %}
+{% elsif include.aspect_ratio == 'original' %}
+  {% assign figure_aspect_ratio_style = '' %} 
+  {% assign image_object_fit_style = 'object-fit: contain;' %}
+  {% assign image_height_style = 'height: auto;' %} 
+  {% assign image_overflow_style = '' %} 
+{% else %}
+  {% comment %} Default to 2/1 horizontal if no valid mode specified {% endcomment %}
+  {% assign figure_aspect_ratio_style = 'aspect-ratio: 2/1;' %}
+{% endif %}
+
 <figure style="text-align: center; margin: 1.5em 0;">
-    <div style="max-width: 100%; width: 600px; aspect-ratio: 2/1; overflow: hidden; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-        <img 
+    <div style="
+        max-width: 100%;
+        width: 600px;
+        {{ figure_aspect_ratio_style }}
+        {{ image_overflow_style }}
+        display: inline-block;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    ">
+        <img
             src="{{ include.src }}"
             title="{{ include.title | escape }}"
             alt="{{ include.alt | escape }}"
-            style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+            style="
+                width: 100%;
+                {{ image_height_style }}
+                {{ image_object_fit_style }}
+                object-position: center;
+                display: block;
+            "
         >
     </div>
     <figcaption style="margin-top: 0.75em; font-size: 1em; color: #555; font-style: italic;">
