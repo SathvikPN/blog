@@ -97,7 +97,7 @@ author:
   # email: your-email@domain.com
 
 description: >
-  a software engineer updated
+  software engineer
 
 theme: minima
 
@@ -118,7 +118,7 @@ minima:
   #     * solarized-light    Light variant of solarized color scheme.
   #     * solarized-dark     Dark variant of solarized color scheme.
   #     * solarized          Adaptive skin for solarized color scheme skins.
-  skin: classic
+  skin: solarized-light
 
   # Specific pages for site navigation.
   #   If you wish to link only specific pages in the site-navigation, use this and list
@@ -128,7 +128,7 @@ minima:
     - about.md
 
   # Set to `true` to show excerpts on the homepage.
-  show_excerpts: false
+  show_excerpts: true
 
   # Minima date format.
   #   The default value is "%b %d, %Y" (e.g. Nov 14, 2023).
@@ -142,9 +142,10 @@ minima:
   #     * icon     Font Awesome icon id. `github` corresponds to `fa-github`.
   #     * url      Full URL of social profile.
   social_links:
-    - title: Minima Theme repository at GitHub
-      icon: github
-      url: "https://github.com/jekyll/minima"
-    - title: Jekyll at X (formerly Twitter)
+    - title: SathvikPN at X (formerly Twitter)
       icon: x-twitter
-      url: "https://x.com/jekyllrb"
+      url: "https://x.com/SathvikPN"
+    - title: SathvikPN at GitHub
+      icon: github
+      url: "https://github.com/SathvikPN"
+
