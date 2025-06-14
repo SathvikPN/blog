@@ -126,6 +126,8 @@ minima:
   #   should be rendered.
   nav_pages:
     - about.md
+    - shelf.md
+    - test.md
 
   # Set to `true` to show excerpts on the homepage.
   show_excerpts: true
