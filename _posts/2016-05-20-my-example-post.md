@@ -16,3 +16,12 @@ No laudem altera adolescens has, volumus lucilius eum no. Eam ei nulla audiam ef
 one line  
 two line  
 end of line  
+
+![A cute cat sitting on a keyboard](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg "My Cat Picture")
+
+
+{% include figure.html
+    caption="Your image caption goes here. This can be a short description or attribution."
+    src="https://images.unsplash.com/photo-1732298540659-a4c5d5c12808?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    altsrc="https://unsplash.com/photos/-fjSDrSa9aA"
+%}

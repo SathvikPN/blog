@@ -1,0 +1,19 @@
+<figure style="text-align: center; margin: 1.5em 0;">
+  <img 
+    src="{{ include.src }}"
+    title="{{ include.title | escape }}"
+    alt="{{ include.alt | escape }}"
+    style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);"
+  >
+  <figcaption style="margin-top: 0.75em; font-size: 1em; color: #555; font-style: italic;">
+    {{ include.caption }} [ 
+    
+    captured by sathvik 
+    
+        {% if include.altsrc -%}
+        <a href="{{ include.altsrc }}"> - link</a>
+        {% endif -%}
+        
+    ]
+  </figcaption>
+</figure>
