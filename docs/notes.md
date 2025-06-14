@@ -8,3 +8,5 @@ from root of repo,
 OR  
 
 `bundle exec jekyll serve --config _config_theme-dev.yml $@`
+
+build: `bundle exec jekyll build --config _config_theme-dev.yml`
