@@ -1,12 +1,7 @@
 ---              
-layout: post              
-author: Sathvik PN              
-categories: rants          
-          
-# optional ------------          
-# title: horizon            
-# comments: false           
-# modified_date: 2016-05-27             
+layout: post        
+author: Sathvik PN
+categories: rants         
 ---         
   
   
