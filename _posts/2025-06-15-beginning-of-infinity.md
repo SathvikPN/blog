@@ -1,7 +1,8 @@
 ---              
 layout: post        
 author: Sathvik PN
-categories: rants         
+categories: rants       
+title: beginning of infinity  
 ---         
   
   
@@ -12,12 +13,10 @@ They can see something beyond the hell.
 It might be hope.          
 It may even be another hell.          
 Only those who keep moving forward will ever know        
-> Hajime Isayama (via Eren Yeager character at ‘Attack on Titan’)            
+-- Hajime Isayama (via Eren Yeager character at ‘Attack on Titan’)            
           
-       
-    
+<!--excerpt-->
 
----  
 voyagers who chose to push themselves beyond their horizon,         
 to leave the sight of shore,         
 to digest the fears of getting lost(not feel, but for real),         

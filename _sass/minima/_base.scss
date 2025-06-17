@@ -114,7 +114,9 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: $link-base-color;
-  text-decoration: none;
+    text-decoration: underline $brand-color;
+    text-underline-offset: 5px; // Increased for more comfortable space
+    text-decoration-thickness: 1px; // Thicker underline for better visibility
 
   &:visited {
     color: $link-visited-color;
@@ -123,7 +125,8 @@ a {
   &:hover {
     color: $link-hover-color;
     text-decoration: underline $brand-color;
-    text-underline-offset: 3px;
+    text-underline-offset: 5px; // Increased for more comfortable space
+    text-decoration-thickness: 2px; // Thicker underline for better visibility
   }
 
   .social-media-list &:hover {
@@ -131,6 +134,8 @@ a {
 
     .username {
       text-decoration: underline;
+      text-underline-offset: 5px; // Match the link underline offset
+      text-decoration-thickness: 2px;
     }
   }
 }

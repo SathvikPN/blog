@@ -132,6 +132,7 @@ minima:
 
   # Set to `true` to show excerpts on the homepage.
   show_excerpts: true
+  excerpt_separator: "<!--excerpt-->"
 
   # Minima date format.
   #   The default value is "%b %d, %Y" (e.g. Nov 14, 2023).
