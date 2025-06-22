@@ -7,24 +7,60 @@
     <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
 
     <span id="live-timer" class="live-timer"></span>
-    <span class="timer-separator" aria-hidden="true"> </span>
+    <span class="timer-separator" aria-hidden="true"></span>
+
+    <!-- Music button: simple text, blends with background, placed before nav -->
+    <button id="music-btn"
+      aria-label="Play or pause background music"
+      style="
+        background: none;
+        border: none;
+        color: inherit;
+        font-size: 1em;
+        cursor: pointer;
+        padding: 0 0.7em;
+        margin: 0 0.2em;
+        border-radius: 4px;
+        font-family: inherit;
+        transition: background 0.2s, color 0.2s;
+      "
+      onmouseover="this.style.background='#ececec';"
+      onmouseout="this.style.background='none';"
+    >► Music</button>
+    <audio id="music-audio" src="/assets/sample.mp3" preload="auto"></audio>
     <script>
-    (function() {
-      function updateTimer() {
-        const timer = document.getElementById('live-timer');
-        if (!timer) return;
-        const now = new Date();
-        let hours = now.getHours();
-        const minutes = now.getMinutes();
-        const seconds = now.getSeconds();
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
-        const pad = n => n.toString().padStart(2, '0');
-        timer.textContent = `${hours}:${pad(minutes)}:${pad(seconds)} ${ampm} • Bengaluru`;
-      }
-      updateTimer();
-      setInterval(updateTimer, 1000);
-    })();
+      // Timer
+      (function() {
+        function updateTimer() {
+          const timer = document.getElementById('live-timer');
+          if (!timer) return;
+          const now = new Date();
+          let hours = now.getHours();
+          const minutes = now.getMinutes();
+          const seconds = now.getSeconds();
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12 || 12;
+          const pad = n => n.toString().padStart(2, '0');
+          timer.textContent = `${hours}:${pad(minutes)}:${pad(seconds)} ${ampm} • Bengaluru`;
+        }
+        updateTimer();
+        setInterval(updateTimer, 1000);
+      })();
+      // Music button
+      const musicBtn = document.getElementById('music-btn');
+      const musicAudio = document.getElementById('music-audio');
+      let musicPlaying = false;
+      musicBtn.onclick = function() {
+        if (!musicPlaying) {
+          musicAudio.play();
+          musicBtn.textContent = '⏸︎ Music';
+          musicPlaying = true;
+        } else {
+          musicAudio.pause();
+          musicBtn.textContent = '► Music';
+          musicPlaying = false;
+        }
+      };
     </script>
     <style>
     .site-header .wrapper {
@@ -55,9 +91,13 @@
     .site-nav {
       order: 3;
     }
+    #music-btn {
+      order: 2;
+    }
     @media (max-width: 700px) {
       .live-timer,
-      .timer-separator {
+      .timer-separator,
+      #music-btn {
         display: none;
       }
     }
